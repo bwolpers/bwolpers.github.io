@@ -1,0 +1,48 @@
+body {
+    background:#DEB887;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.assignments{
+    display:flex;
+    flex-wrap:wrap
+}
+.assignment{
+    width:20%;
+    padding: 10px;
+    margin: 10px;
+    padding:20px 10;
+    background: #FFF8DC;
+    border-radius: 10px;
+}
+
+.assignment img {
+    width: 200px;
+    margin:10px;
+    border:4px solid white;
+    display:block;
+    margin:auto;
+}
+.assignment img:hover {
+    border:4px dashed #DEB887;
+}
+h1 {
+    color: white;
+    text-align: center;
+}
+h1:hover{
+    color: #DEB887;
+    text-align: center;
+   
+}
+h2{
+    text-align:center;
+}
+
+a{
+    text-decoration: none;
+    color:#A52A2A;
+}
+
+a:hover{
+    color:#DEB887;
+}
