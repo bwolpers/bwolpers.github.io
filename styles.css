@@ -1,0 +1,38 @@
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+body {
+    background-color:#053B50; 
+    opacity: 0.5;
+    color: #64CCC5; 
+    background-size: cover;
+    position: relative;
+}
+h2 {
+    text-align: center;
+}
+h1{
+    text-align:center;
+}
+p{
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    color:  #64CCC5; 
+}
+a:hover{
+    color: #EEEEEE;
+}
+#assignment {
+    width: 80%;
+    margin: 0 auto;
+    background-color: #176B87; 
+    padding: 20px;
+    border-radius: 10px;
+    
+}
