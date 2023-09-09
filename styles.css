@@ -71,3 +71,8 @@ a:hover {
         margin-right: auto;
     }
 }
+@media screen and (min-width: 769px) {
+    .assignments {
+        flex-direction: row;
+    }
+}
