@@ -63,13 +63,7 @@ a:hover {
     .assignments {
         flex-direction: column; 
     }
-
-    .assignment {
-        width: 100%; 
-        margin: 10px 0;
-    }
     .image img {
-        width: 100%; 
         height: auto; 
     }
     .desc{
