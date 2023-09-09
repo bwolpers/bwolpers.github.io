@@ -1,38 +1,85 @@
-
 body {
     font-family: Arial, Helvetica, sans-serif;
-}
-
-
-body {
-    background-color:#053B50; 
+    background-color: #053B50;
     opacity: 0.5;
-    color: #64CCC5; 
-    background-size: cover;
-    position: relative;
+    color: #64CCC5;
+    margin: 0; 
+    padding: 0;
 }
+
 h2 {
     text-align: center;
 }
-h1{
-    text-align:center;
-}
-p{
+
+h1 {
     text-align: center;
 }
-
 a {
     text-decoration: none;
-    color:  #64CCC5; 
+    color: #64CCC5;
 }
-a:hover{
-    color: #EEEEEE;
+
+a:hover {
+    color: #929090;
 }
-#assignment {
-    width: 80%;
-    margin: 0 auto;
-    background-color: #176B87; 
-    padding: 20px;
-    border-radius: 10px;
+
+.assignments {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.assignment {
     
+    background-color: #145560;
+    border: 1px black solid;
+    margin: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+.image img{
+   width: 320px;
+   height: 200px;
+}
+.image-container {
+    background-color: #145560;
+    padding: 10px;
+    margin: 10px;
+    color: white;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+#corner{
+    position: relative; 
+    text-align:left;
+   
+}
+.desc{
+   
+    max-width: 320px; 
+    margin-top: 10px; 
+   
+}
+
+@media screen and (max-width: 768px) {
+    .assignments {
+        flex-direction: column; 
+    }
+
+    .assignment {
+        width: 100%; 
+        margin: 10px 0;
+    }
+    .image img {
+        width: 100%; 
+        height: auto; 
+    }
+    .desc{
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
