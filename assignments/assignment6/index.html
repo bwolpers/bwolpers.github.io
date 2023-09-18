@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Assignment 6</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <header>
+        <div class="title-box">
+            <h1>Intro to JavaScript</h1>
+        </div>
+    </header>
+    <div class="content-container">
+        <div class="box-content">
+            <div class="box">
+                <div class="inner-content">
+                    <div class="text">
+                        <h2>Hide and Seek</h2>
+                    </div>
+                    <div id="align-left">
+                        <div class="buttons">
+                            <button class="button show-button" onclick="showImage('image1')">Show</button>
+                            <button class="button hide-button" onclick="hideImage('image1')">Hide</button>
+                        </div>
+                        <div class="image-container">
+                            <img id="image1" src="images/bread.jpg" alt="Image 1" style="display: none;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="box-content">
+            <div class="box">
+                <div class="inner-content">
+                    <div class="text">
+                        <h2>Animate</h2>
+                    </div>
+                    <div id="align-left">
+                        <div class="buttons">
+                            <button id="button-dance">Dance</button>
+                        </div>
+                        <div id="emoji">🕺</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="box-content">
+            <div class="box">
+                <div class="inner-content">
+                    <div class="text">
+                        <h2>Input</h2>
+                    </div>
+                    <div id="box3">
+                        <div id="row">
+                            <div class="label-input-pair">
+                                <label for="txt-product-name">Product Name:</label>
+                                <input type="text" class="txt-product-name">
+                            </div>
+                            <div class="label-input-pair">
+                                <label for="txt-comment">Comment:</label>
+                                <textarea class="txt-comment" rows="2"></textarea>
+                            </div>
+                            <div class="label-input-pair">
+                                <label for="txt-rating">Rating:</label>
+                                <input type="text" class="txt-rating">
+                            </div>
+                            <div class="label-input-pair">
+                                <label for="txt-user-name">Username:</label>
+                                <input type="text" class="txt-user-name">
+                            </div>
+                        </div>
+                        <button id="button-add-comment">Add Comment</button>
+                        <div id="comments-container"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+<footer>
+    <p>Goodbye</p>
+</footer>
+
+</html>
