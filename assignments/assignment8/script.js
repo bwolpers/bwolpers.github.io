@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let isRunning = false;
     let leftMargin = 0;
     const maxLeftMargin = 510;
-    const animationSpeed = 3;
+    const animationSpeed = 5;
     const switchInterval = 950;
     let lastSwitchTime = 0;
 
@@ -73,12 +73,10 @@ document.addEventListener("DOMContentLoaded", function () {
             leftMargin = 0;
             runner.style.marginLeft = "0px";
             toggleRunning();
-            lastSwitchTime = 0;
         }
     }
 
     imageLink.addEventListener("click", function (e) {
-        e.preventDefault();
         if (!isRunning) {
             toggleRunning();
             moveImage();
