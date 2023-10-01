@@ -18,51 +18,6 @@ a {
     text-decoration: none;
 }
 
-.title-box {
-    background-color: #fff9d4;
-    color: black;
-    text-align: center;
-    padding: 10px;
-}
-
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #6495ED;
-    padding: 20px;
-
-}
-
-.navbar {
-    display: flex;
-}
-
-.nav-box {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: white;
-}
-
-.nav-item {
-    color: #000000;
-    text-decoration: none;
-    padding: 10px;
-    text-align: center;
-}
-
-.nav-item.active {
-    background-color: #6495ED;
-
-    border-bottom: 2px solid black;
-}
-
-.nav-item:hover {
-    background-color: #94bfff;
-}
-
 .content-container {
     display: flex;
     justify-content: center;
@@ -137,11 +92,6 @@ nav {
     flex: 0 0 auto;
     text-align: left;
 }
-
-.age {
-    margin-left: 14px;
-}
-
 #goal {
     font-weight: bold;
 }
@@ -197,26 +147,6 @@ nav {
     transition: height 0.5s ease-in-out;
 }
 
-.comments-wrapper {
-    display: flex;
-    flex-direction: column-reverse;
-    overflow-y: auto;
-
-}
-
-.comment-container {
-    background-color: #fff9d4;
-    padding: 10px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    overflow-y: auto;
-    max-width: 100%;
-
-}
-
-.hidden {
-    display: none;
-}
 
 @media screen and (max-width: 768px) {
     .content-container {
@@ -228,26 +158,4 @@ nav {
         margin-bottom: -10px;
     }
 
-    .navbar {
-        display: block;
-        width: 100%;
-    }
-
-    .nav-item.active {
-        background-color: transparent;
-
-    }
-
-    .nav-item {
-        display: block;
-
-    }
-}
-
-@media screen and (min-width: 769px) {
-    .nav-item {
-        display: block;
-        width: 50vw;
-        flex-direction: row;
-    }
 }

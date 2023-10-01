@@ -45,10 +45,10 @@ document.addEventListener("DOMContentLoaded", function () {
     let isRunning = false;
     let leftMargin = 0;
     const maxLeftMargin = 510;
-    const animationSpeed = 5;
-    const switchInterval = 950;
+    const animationSpeed = 2; 
+    const switchInterval = 500;
     let lastSwitchTime = 0;
-
+    let animationId = null; 
     function toggleRunning() {
         isRunning = !isRunning;
         if (isRunning) {
@@ -68,11 +68,12 @@ document.addEventListener("DOMContentLoaded", function () {
                 toggleRunning();
                 lastSwitchTime = currentTime;
             }
-            requestAnimationFrame(moveImage);
+            animationId = requestAnimationFrame(moveImage);
         } else {
             leftMargin = 0;
             runner.style.marginLeft = "0px";
             toggleRunning();
+            cancelAnimationFrame(animationId); 
         }
     }
 
@@ -81,6 +82,6 @@ document.addEventListener("DOMContentLoaded", function () {
             toggleRunning();
             moveImage();
             lastSwitchTime = 0;
-        }   
+        }
     });
 });

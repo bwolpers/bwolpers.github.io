@@ -3,7 +3,7 @@ body {
     background-color: #053B50;
     opacity: 0.5;
     color: #64CCC5;
-    margin: 0; 
+    margin: 0;
     padding: 0;
 }
 
@@ -14,6 +14,7 @@ h2 {
 h1 {
     text-align: center;
 }
+
 a {
     text-decoration: none;
     color: #64CCC5;
@@ -26,37 +27,42 @@ a:hover {
 .assignments {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-between; /* Distribute items evenly */
 }
 
 .assignment {
     background-color: #145560;
     margin: 20px;
     text-align: center;
+    width: calc(33.33% - 40px); /* 3 assignment boxes per row with some margin */
+    box-sizing: border-box; /* Include padding and border in width calculation */
+    padding: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
-.image img{
-   width: 320px;
-   height: 150px;
+
+.image img {
+    max-width: 100%; /* Ensure images fit within their containers */
+    height: auto;
 }
+
 .image-container {
     background-color: #145560;
     padding: 10px;
     margin: 10px;
     align-items: center;
-    
 }
-#corner{
-    position: relative; 
-    text-align:left;
-   
+
+#corner {
+    position: relative;
+    text-align: left;
 }
-.desc{
-    max-width: 320px; 
-    margin-top: 10px; 
+
+.desc {
+    max-width: 100%; /* Ensure text doesn't overflow container */
+    margin-top: 10px;
     text-align: center;
     margin-left: auto;
     margin-right: auto;
@@ -64,18 +70,12 @@ a:hover {
 
 @media screen and (max-width: 768px) {
     .assignments {
-        flex-direction: column; 
-    }
-    .image img {
-        height: auto; 
-    }
-    .desc{
-        margin-left: auto;
-        margin-right: auto;
+        flex-direction: column;
     }
 }
+
 @media screen and (min-width: 769px) {
-    .assignments {
-        flex-direction: row;
+    .assignment {
+        width: calc(33.33% - 40px); /* 3 assignment boxes per row with some margin */
     }
 }
