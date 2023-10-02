@@ -8,12 +8,16 @@ body {
 
 h2 {
     text-align: center;
+    font-size: 33px;
 }
 
 h1 {
     text-align: center;
+    
 }
-
+p{
+    font-size: 23px;
+}
 a {
     text-decoration: none;
 }
@@ -57,7 +61,7 @@ a {
 .inner-content {
     display: flex;
     flex-direction: column;
-    padding: 10px;
+    
 
 }
 
@@ -88,7 +92,6 @@ a {
 
 .input-boxes input[type="text"] {
     padding: 3px;
-    margin-bottom: 10px;
     flex: 0 0 auto;
     text-align: left;
 }
@@ -124,7 +127,6 @@ a {
 .buttons {
     display: flex;
     justify-content: flex-start;
-    margin-top: -50px;
     text-align: left;
     align-items: left;
 }

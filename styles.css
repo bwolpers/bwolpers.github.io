@@ -9,6 +9,7 @@ body {
 
 h2 {
     text-align: center;
+    
 }
 
 h1 {
@@ -27,15 +28,15 @@ a:hover {
 .assignments {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between; /* Distribute items evenly */
+    justify-content: space-between; 
 }
 
 .assignment {
     background-color: #145560;
     margin: 20px;
     text-align: center;
-    width: calc(33.33% - 40px); /* 3 assignment boxes per row with some margin */
-    box-sizing: border-box; /* Include padding and border in width calculation */
+    width: calc(33.33% - 40px); 
+    box-sizing: border-box; 
     padding: 20px;
     display: flex;
     flex-direction: column;
@@ -44,7 +45,7 @@ a:hover {
 }
 
 .image img {
-    max-width: 100%; /* Ensure images fit within their containers */
+    max-width: 100%; 
     height: auto;
 }
 
@@ -61,7 +62,7 @@ a:hover {
 }
 
 .desc {
-    max-width: 100%; /* Ensure text doesn't overflow container */
+    max-width: 100%; 
     margin-top: 10px;
     text-align: center;
     margin-left: auto;
@@ -76,6 +77,6 @@ a:hover {
 
 @media screen and (min-width: 769px) {
     .assignment {
-        width: calc(33.33% - 40px); /* 3 assignment boxes per row with some margin */
+        width: calc(33.33% - 40px); 
     }
 }
