@@ -1,0 +1,88 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: white;
+    color: black;
+    margin: 0;
+    padding: 0;
+}
+
+h2 {
+    text-align: center;
+    font-size: 33px;
+}
+
+h1 {
+    text-align: center;
+    
+}
+p{
+    font-size: 18px;
+}
+a {
+    text-decoration: none;
+}
+
+.content-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box-content {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #F0FFFF;
+    width: 50%; 
+    height: 300px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-left: 25px;
+    margin-right: 25px;
+}
+
+.inner-content {
+    display: flex;
+    flex-direction: column;
+    
+
+}
+.box {
+    max-width: 100%; 
+}
+#text {
+    text-align: left;
+}
+#rainbow-button{
+    background-color: black;
+    color: #F0FFFF;
+    border-radius: 5px;
+    margin-left: 20px;
+}
+.rainbow-bar {
+    width: 40vw;
+    height: 10px;
+    transition: width 0.5s;
+    margin-left: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+#pot-of-gold {
+    display: none; 
+    max-width: 50px; 
+    margin-left: 570px;
+    margin-top: -50px; 
+    position: relative;
+    z-index: 2;
+}
+@media screen and (max-width: 768px) {
+    .content-container {
+        flex-direction: column;
+    }
+
+    .box-content {
+        height: auto;
+        margin-bottom: -10px;
+    }
+}
