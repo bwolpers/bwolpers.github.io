@@ -28,7 +28,6 @@ a:hover {
 .assignments {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between; 
 }
 
 .assignment {
@@ -72,6 +71,11 @@ a:hover {
 @media screen and (max-width: 768px) {
     .assignments {
         flex-direction: column;
+    }
+
+    .assignment {
+        width: 100%; 
+        margin: 20px 0; 
     }
 }
 
