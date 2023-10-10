@@ -30,6 +30,7 @@ document.addEventListener("DOMContentLoaded", function() {
     function createRainbow() {
         rainbowButton.disabled = true;
         potOfGoldImage.style.display = "none";
+        rainbowContainer.innerHTML = '';
         colors.forEach((color, index) => {
             setTimeout(() => {
                 const bar = document.createElement("div");
