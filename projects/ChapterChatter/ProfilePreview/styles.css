@@ -3,20 +3,21 @@ body {
     padding: 0;
     font-family: Arial, sans-serif;
     background-color:  #dadada;
-    
 }
-h1{
+
+h1 {
     text-align: center;
-    background-color: grey;
     margin: 0; 
-    padding: 25px; 
+   
 }
+
 header {
     background-color: black ;
     color: white;
     padding: 30px 0;
     border-bottom: 3px solid #e74c3c  ;
 }
+
 #Book {
     width: 75px;
     height: 75px;
@@ -24,7 +25,6 @@ header {
     position: absolute;
     top: -10px;
 }
-
 
 nav {
     float: right; 
@@ -37,13 +37,11 @@ nav ul {
     list-style-type: none;
     font-size: 20px;
     display: flex;
-
 }
 
 nav li {
     text-align: center;
     margin: 0 15px;
-    
 }
 
 nav a {
@@ -51,61 +49,53 @@ nav a {
     color: white;
 }
 
-
-
 .content-container {
     display: flex;
-    flex-wrap: wrap;
-    border-bottom: 2px solid grey;
-}
-#rating{
-    font-size: 50px;
-    margin-top: 0;
-}
-.box {
-    flex: 1;
-    padding: 20px;
-    text-align: left; 
-}
-.name{
-    font-size: 20px;
-    font-weight: bold;
-    margin-bottom: 0;
-}
-.box h2 {
-    margin-top: 100px;
-    margin-right: 120px;
-    margin-left: 0; 
+    justify-content: center; 
+
+    margin-bottom: 143px;
 }
 
-.box p {
-    margin-right: 120px;
-    padding-left: 0; 
-    font-size: 18px;
-    margin-bottom: 50px;
+.box {
+    padding: 20px;
+    
 }
-.button{
-    padding: 7px;
+
+.box h2 {
+    margin-left: 0; 
+    text-align: center;
+    font-size: 15px;
+    color: red;
+}
+
+.button {
+    padding: 5px;
     padding-right: 45px;
     padding-left: 45px;
-    font-size: 20px;
-    background-color: red;
-    text-align: center;
+    font-size: 15px;
+    background-color: #e74c3c; 
+    color: white; 
+    cursor: pointer; 
+    align-items: left;
+    margin-left: 120px;
 }
+
 .button:hover {
     background-color: #c0392b; 
 }
-
-
-
-.box2 {
-    flex: 1;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    margin: 120px;
+.box p {
+    font-size: 18px;
+    margin-bottom: 50px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5); 
+    padding: 20px; 
+    color: white;
+    margin-bottom: 70px; 
 }
-#more{
+.box h1{
+    font-size: 20px;
+}
+#more {
     position: absolute;
     left: 50%;
     transform: translate(-50%, -5%);
@@ -129,6 +119,27 @@ nav a {
     display: none;
 }
 
+#username{
+    margin-left: 3px;
+}
+#password{
+    margin-left: 5px;
+}
+.rest{
+    flex-direction: column;
+    align-items: center;
+    display: flex;
+    margin-top: 100px;
+    margin-bottom: 50px;
+    background-color: grey;
+    padding: 50px;
+}
+.label-input{
+    margin-bottom: 100px;
+}
+#back{
+    margin: 0;
+}
 @media (max-width: 768px) {
     body {
         overflow-x: hidden; 

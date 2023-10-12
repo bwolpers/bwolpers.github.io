@@ -6,28 +6,28 @@ body {
 
 h1 {
     text-align: center;
-    margin: 0; 
-    padding: 25px; 
+    margin: 0;
+    padding: 25px;
     font-size: 30px;
 }
 
 header {
-    background-color: black ;
+    background-color: black;
     color: white;
     padding: 30px 0;
-    border-bottom: 3px solid #e74c3c  ;
+    border-bottom: 3px solid #e74c3c;
 }
 
 #Book {
     width: 75px;
     height: 75px;
-    float: left; 
+    float: left;
     position: absolute;
     top: -10px;
 }
 
 nav {
-    float: right; 
+    float: right;
     top: 0px;
     right: 0;
     position: absolute;
@@ -51,18 +51,19 @@ nav a {
 
 .content-container {
     display: flex;
-    justify-content: center; 
+    justify-content: center;
     margin-bottom: 143px;
 }
 
 .box {
-    padding: 20px;
-    text-align: left; 
+    padding: 0px;
+    margin-right: 100px;
 }
 
 .box h2 {
-    margin-left: 0; 
+    margin-left: 0;
     text-align: center;
+    margin-top: 100px;
 }
 
 .button {
@@ -70,24 +71,30 @@ nav a {
     padding-right: 45px;
     padding-left: 45px;
     font-size: 20px;
-    background-color: #e74c3c; 
-    color: white; 
-    cursor: pointer; 
+    background-color: #e74c3c;
+    color: white;
+    cursor: pointer;
     margin-top: -3px;
     margin-left: 165px;
+    text-decoration: none;
+}
+
+.popular-reviews .review .button {
+    margin: 0 auto;
+    margin-top: 10px; 
 }
 
 .button:hover {
-    background-color: #c0392b; 
+    background-color: #c0392b;
 }
+
+
 .box p {
     font-size: 18px;
     margin-bottom: 50px;
     text-align: center;
-   
-    padding: 20px; 
-    color: white; 
-
+    padding: 10px;
+    color: white;
 }
 
 #more {
@@ -96,12 +103,11 @@ nav a {
     transform: translate(-50%, -5%);
 }
 
-
 .book-grid {
     display: flex;
-    justify-content: center; 
+    justify-content: center;
     flex-wrap: wrap;
-    margin-left: 60px;
+    margin-right: 0px;
 }
 
 .placeholder-column {
@@ -113,27 +119,74 @@ nav a {
     border: 1px solid black;
 }
 
+.placeholder-column2 {
+    flex: 0 1 calc(33.33% - 20px);
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    border: 1px solid black;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    margin-right: 3px;
+}
+
+#half2 {
+    background-color: #e74c3c;
+    flex-direction: row;
+    width: 50%;
+    margin-left: 77px;
+    text-align: center;
+    border: 1px solid black;
+    margin-top: -1px;
+}
+
+#half2 p {
+    margin: 0;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 10px;
+    padding: 2px;
+    text-align: center;
+    padding-bottom: 2px;
+    padding-top: 2px;
+}
+
+#trophy {
+    font-size: 60px;
+}
+
 .placeholder-column p {
     margin: 0;
-    font-size: 40px;
-    line-height: 1; 
+    font-size: 25px;
+    color: black;
+    margin-top: -10px;
 }
+
 .placeholder-column:last-child {
-    margin-left: 0px; 
+    margin-left: 0px;
+}
+
+#blank1 {
+    border-right: none;
+}
+
+#blank2 {
+    border-right: none;
+    border-left: none;
+}
+
+#blank3 {
+    border-left: none;
+    border-right: none;
 }
 
 .placeholder-column img {
     max-width: 100%;
     height: auto;
 }
-.placeholder-column p{
-    margin-left: 20px;
-    margin-right: 60px;
-}
-.placeholder-column h2{
-    text-align: center;
-    margin-right: 80px;
-}
+
 .hamburger-button {
     cursor: pointer;
     display: flex;
@@ -141,7 +194,7 @@ nav a {
     justify-content: space-between;
     width: 30px;
     height: 20px;
-    margin-right: 20px; 
+    margin-right: 20px;
 }
 
 .hamburger-button .bar {
@@ -149,13 +202,15 @@ nav a {
     height: 3px;
     background-color: #fff;
 }
+
 #hamburger-input {
     display: none;
 }
+
 .name {
     font-size: 29px;
     font-weight: bold;
-    margin-top: 10px; 
+    margin-top: 10px;
     text-align: center;
     margin-right: 400px;
 }
@@ -166,13 +221,14 @@ nav a {
     margin-right: 300px;
     margin-left: 165px;
 }
+
 .profile-picture {
-    width: 400px; 
-    height: 400px; 
+    width: 300px;
+    height: 300px;
     overflow: hidden;
-    border-radius: 50%; 
-    border: 2px solid #fff; 
-    margin-left: 20px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    margin-left: 95px;
     margin-top: 20px;
     margin-bottom: 10px;
 }
@@ -180,47 +236,39 @@ nav a {
 .profile-picture img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ensure the image covers the circular PFP */
-    border-radius: 50%; /* Make the image itself circular */
+    object-fit: cover;
+    border-radius: 50%;
 }
-@media (max-width: 768px) {
-    body {
-        overflow-x: hidden; 
-    }
 
-    #nav {
-        display: none;
-        flex-direction: column; 
-        position: fixed; 
-        top: 0;
-        left: 10%;
-        background-color: black; 
-    }
-
-    nav ul {
-        display: block;
-        padding: 0;
-        margin: 0;
-        text-align: center;
-    }
-
-    nav li {
-        margin: 15px 0; 
-    }
-
-    #hamburger-input:checked + .hamburger-button + #nav {
-        display: flex; 
-        flex-direction: column;
-    }
-    #Book{
-        display: none;
-    }
+.popular-reviews {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    text-align: center;
+    background-color: #dadada;
 }
-@media (min-width: 768px) {
-    .hamburger-button{
-        display: none;
-    }
-    #Book{
-        display: block;
-    }
+.popular-reviews h2{
+    margin-bottom: 100px;
+}
+.popular-reviews .review {
+    flex: 0 1 calc(33.33% - 20px);
+    margin: 0;
+    padding: 20px;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+.reviews-container{
+    display: flex;
+    justify-content: center;
+  
+}
+.review p, h3{
+    margin-right: 120px;
+    margin-left: 120px;
+}
+.reviews-container{
+    margin: 0;
+    margin-right: 0;
+    margin-left: 0;
 }
