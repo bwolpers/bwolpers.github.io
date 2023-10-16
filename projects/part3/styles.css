@@ -1,0 +1,224 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: white;
+}
+
+header {
+    background-color: black;
+    color: white;
+    padding: 30px 0;
+    position: relative;
+    z-index: 1; /* Ensure the header is on top */
+}
+
+p {
+    margin-bottom: 100px;
+}
+
+#Book {
+    width: 75px;
+    height: 75px;
+    float: left;
+    position: absolute;
+    top: -10px;
+}
+
+nav {
+    float: right;
+    top: 0px;
+    right: 0;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    transition: transform 0.3s ease-in-out;
+    z-index: 2; /* Ensure the navigation is above other elements */
+}
+
+nav ul {
+    list-style-type: none;
+    font-size: 20px;
+    display: flex;
+    z-index: 2; /* Ensure the navigation is above other elements */
+}
+
+nav li {
+    text-align: center;
+    margin: 0 15px;
+    z-index: 2; /* Ensure the navigation is above other elements */
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+}
+
+.button {
+    padding: 7px;
+    padding-right: 45px;
+    padding-left: 45px;
+    font-size: 20px;
+    background-color: red;
+    margin-bottom: 100px;
+    z-index: 2; /* Ensure the button is above other elements */
+}
+
+.button:hover {
+    background-color: #c0392b;
+}
+
+.content-container {
+    display: flex;
+    flex-wrap: wrap;
+    border-bottom: 2px solid grey;
+    position: relative; /* Added for text z-index */
+    z-index: 1; /* Ensure content containers are above the header */
+}
+
+.box {
+    flex: 1;
+    position: relative; /* Added for parallax effect */
+    overflow: hidden; /* Added for parallax effect */
+    z-index: 3; /* Added for parallax z-index */
+    border: 1px solid grey;
+}
+
+.box h2 {
+    margin-top: 150px;
+    margin-right: 100px;
+    margin-left: 100px;
+    position: relative; /* Added for text z-index */
+    z-index: 2; /* Ensure text is above the background */
+}
+
+.box p {
+    margin-right: 100px;
+    padding-left: 100px;
+    font-size: 18px;
+    position: relative; /* Added for text z-index */
+    z-index: 2; 
+}
+
+.box2 {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 120px;
+    position: relative;
+    overflow: hidden;
+    z-index: 3;
+}
+
+.hamburger-button {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+    margin-right: 20px;
+}
+
+.hamburger-button .bar {
+    width: 30px;
+    height: 3px;
+    background-color: #fff;
+}
+
+#hamburger-input {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    body {
+        overflow-x: hidden;
+    }
+
+    #nav {
+        display: none;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        left: 10%;
+        background-color: black;
+        z-index: 3;
+    }
+
+    nav ul {
+        display: block;
+        padding: 0;
+        margin: 0;
+        text-align: center;
+    }
+
+    nav li {
+        margin: 15px 0;
+    }
+
+    #hamburger-input:checked + .hamburger-button + #nav {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #Book {
+        display: none;
+    }
+}
+
+.parallax {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh; 
+    position: relative;
+    z-index: 2;
+    text-align: center; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.parallax h2,
+.parallax p {
+    color: white; 
+    z-index: 3;
+}
+
+.button {
+    font-size: 20px;
+    background-color: red;
+    text-align: center; 
+    color: white;
+}
+
+@media (min-width: 768px) {
+    .hamburger-button {
+        display: none;
+    }
+
+    #Book {
+        display: block;
+    }
+}
+
+@media (min-width: 768px) {
+    .hamburger-button {
+        display: none;
+    }
+
+    #Book {
+        display: block;
+    }
+}
+
+.parallax {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+}

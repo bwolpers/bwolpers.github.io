@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="../ProfilePreview/styles.css">
+    <title>Edit Profile</title>
+</head>
+
+<body>
+    <header>
+        <img id="Book" src="../images/book.png" alt="book">
+        <input type="checkbox" id="hamburger-input" class="burger-shower" />
+        <label id="hamburger-menu" for="hamburger-input" class="hamburger-button">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </label>
+        <nav id="nav">
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../BookReviews/index.html">Book Reviews</a></li>
+                <li><a href="../Lists/index.html">Lists</a></li>
+                <li><a href="../Challenges/index.html">Challenges</a></li>
+                <li><a href="../Profile/index.html">Profile</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="content-container">
+            <div class="box">
+                <h1>Edit Profile</h1>
+                <div class="rest">
+                    <div class="label-input">
+                        <label for="first-name">First Name:</label>
+                        <input type="text" id="first-name" name="first-name" placeholder="Enter your first name"
+                            required>
+                    </div>
+                    <div class="label-input">
+                        <label for="last-name">Last Name:</label>
+                        <input type="text" id="last-name" name="last-name" placeholder="Enter your last name"
+                            required>
+                    </div>
+                    <div class="label-input">
+                        <label for="username">Username:</label>
+                        <input type="text" id="username" name="username" placeholder="Enter your username"
+                            required>
+                    </div>
+                    <div class="label-input">
+                        <label for="password">Password:</label>
+                        <input type="text" id="password" name="password" placeholder="Enter your password"
+                            required>
+                    </div>
+                    <a href="../Profile/index.html"><button type="submit" class="button">Save</button></a>
+                </div>
+            </div>
+        </div>
+        <a href="../Profile/index.html"><button class="button" id="back">←</button></a>
+    </main>
+
+    <footer>
+
+    </footer>
+</body>
+
+</html>
