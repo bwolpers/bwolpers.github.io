@@ -58,6 +58,8 @@ nav a {
 .box {
     padding: 20px;
     text-align: left; 
+    align-items: center;
+    margin-right: 200px;
 }
 
 .box h2 {

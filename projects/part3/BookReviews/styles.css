@@ -2,36 +2,40 @@ body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    background-color:  #dadada;
-    
+    background-color: #dadada;
+
 }
-h1{
+
+h1 {
     text-align: center;
     background-color: grey;
-    margin: 0; 
-    padding: 25px; 
+    margin: 0;
+    padding: 25px;
 }
-#image{
+
+#image {
     height: 400px;
     width: 400px;
 }
+
 header {
-    background-color: black ;
+    background-color: black;
     color: white;
     padding: 30px 0;
-    border-bottom: 3px solid #e74c3c  ;
+    border-bottom: 3px solid #e74c3c;
 }
+
 #Book {
     width: 75px;
     height: 75px;
-    float: left; 
+    float: left;
     position: absolute;
     top: -10px;
 }
 
 
 nav {
-    float: right; 
+    float: right;
     top: 0px;
     right: 0;
     position: absolute;
@@ -47,7 +51,7 @@ nav ul {
 nav li {
     text-align: center;
     margin: 0 15px;
-    
+
 }
 
 nav a {
@@ -62,33 +66,38 @@ nav a {
     flex-wrap: wrap;
     border-bottom: 2px solid grey;
 }
-#rating{
+
+#rating {
     font-size: 50px;
     margin-top: 0;
 }
+
 .box {
     flex: 1;
     padding: 20px;
-    text-align: left; 
+    text-align: left;
 }
-.name{
+
+.name {
     font-size: 20px;
     font-weight: bold;
     margin-bottom: 0;
 }
+
 .box h2 {
     margin-top: 100px;
     margin-right: 120px;
-    margin-left: 0; 
+    margin-left: 0;
 }
 
 .box p {
     margin-right: 120px;
-    padding-left: 0; 
+    padding-left: 0;
     font-size: 18px;
     margin-bottom: 50px;
 }
-.button{
+
+.button {
     padding: 7px;
     padding-right: 45px;
     padding-left: 45px;
@@ -96,8 +105,9 @@ nav a {
     background-color: red;
     text-align: center;
 }
+
 .button:hover {
-    background-color: #c0392b; 
+    background-color: #c0392b;
 }
 
 
@@ -107,13 +117,15 @@ nav a {
     display: flex;
     justify-content: flex-end;
     align-items: center;
- 
+
 }
-#more{
+
+#more {
     position: absolute;
     left: 50%;
     transform: translate(-50%, -5%);
 }
+
 .hamburger-button {
     cursor: pointer;
     display: flex;
@@ -121,7 +133,7 @@ nav a {
     justify-content: space-between;
     width: 30px;
     height: 20px;
-    margin-right: 20px; 
+    margin-right: 20px;
 }
 
 .hamburger-button .bar {
@@ -129,22 +141,23 @@ nav a {
     height: 3px;
     background-color: #fff;
 }
+
 #hamburger-input {
     display: none;
 }
 
 @media (max-width: 768px) {
     body {
-        overflow-x: hidden; 
+        overflow-x: hidden;
     }
 
     #nav {
         display: none;
-        flex-direction: column; 
-        position: fixed; 
+        flex-direction: column;
+        position: fixed;
         top: 0;
         left: 10%;
-        background-color: black; 
+        background-color: black;
     }
 
     nav ul {
@@ -155,17 +168,19 @@ nav a {
     }
 
     nav li {
-        margin: 15px 0; 
+        margin: 15px 0;
     }
 
-    #hamburger-input:checked + .hamburger-button + #nav {
-        display: flex; 
+    #hamburger-input:checked+.hamburger-button+#nav {
+        display: flex;
         flex-direction: column;
     }
-    #Book{
+
+    #Book {
         display: none;
     }
 }
+
 @media (max-width: 768px) {
     body {
         overflow-x: hidden;
@@ -206,10 +221,11 @@ nav a {
 
 
 @media (min-width: 768px) {
-    .hamburger-button{
+    .hamburger-button {
         display: none;
     }
-    #Book{
+
+    #Book {
         display: block;
     }
 }

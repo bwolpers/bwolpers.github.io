@@ -9,7 +9,6 @@ body {
 
 h2 {
     text-align: center;
-    
 }
 
 h1 {
@@ -20,17 +19,86 @@ a {
     text-decoration: none;
     color: #64CCC5;
 }
-
-a:hover {
-    color: #929090;
+.image img{
+    width: 350px;
+    height: 300px;
+}
+.title-box {
+    background-color: #fff9d4;
+    color: black;
+    text-align: center;
+    padding: 10px;
 }
 
-.assignments {
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #64CCC5;
+    padding: 20px;
+}
+
+.navbar {
+    display: flex;
+}
+
+.nav-box {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+}
+
+.nav-item {
+    color: #000000;
+    text-decoration: none;
+    padding: 10px;
+    text-align: center;
+}
+
+
+
+.tab-container {
+    display: flex;
+    justify-content: center;
+    background-color: #64CCC5;
+    padding: 10px 0;
+}
+
+.tab {
+    padding: 10px 20px;
+    cursor: pointer;
+    color: #fff;
+}
+
+.tab.active {
+    background-color: #82fff7;
+}
+
+.tab:hover {
+    background-color: #94bfff;
+}
+
+#tabs-content-container {
+    text-align: center;
+}
+
+.content {
+    display: none;
+}
+
+#assignments-content {
+    display: block;
+}
+
+
+
+#assignments {
+    display: block;
     display: flex;
     flex-wrap: wrap;
-    
 }
-
 .assignment {
     background-color: #145560;
     margin: 20px;
@@ -44,14 +112,6 @@ a:hover {
     justify-content: center;
    
 }
-
-.image img {
-    width: 400px; 
-    height: 250px; 
-   
-}
-
-
 .image-container {
     background-color: #145560;
     padding: 10px;
@@ -59,20 +119,35 @@ a:hover {
     align-items: center;
 
 }
-
-#corner {
-    position: relative;
-    text-align: left;
+#projects-content {
+    display: none;
 }
+
+
+.content {
+    display: none;
+}
+
+.tab-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #64CCC5;
+    padding: 10px 0;
+}
+
+.tab {
+    padding: 10px 20px;
+    cursor: pointer;
+    color: #fff;
+}
+
 
 .desc {
-    max-width: 100%; 
+    max-width: 100%;
     margin-top: 10px;
     text-align: center;
-    margin-left: auto;
-    margin-right: auto;
 }
-
 @media screen and (max-width: 768px) {
     .assignments {
         flex-direction: column;
