@@ -15,7 +15,7 @@ a {
     color: #64CCC5;
 }
 
-/* Added styling for images to make them responsive */
+
 .image img {
     max-width: 100%;
     height: auto;
@@ -92,16 +92,16 @@ nav {
     display: none;
 }
 
-/* Updated styling for assignments */
+
 #assignments {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between; /* Adjusted alignment */
+    justify-content: space-between; 
 }
 
 .assignment {
     background-color: #145560;
-    margin: 20px 0; /* Removed margin */
+    margin: 20px 0; 
     text-align: center;
     width: calc(33.33% - 40px);
     box-sizing: border-box;
@@ -116,10 +116,10 @@ nav {
     background-color: #145560;
     padding: 10px;
     align-items: center;
-    width: 100%; /* Adjusted image container width */
+    width: 100%; 
 }
 
-/* Media query for small screens */
+
 @media screen and (max-width: 768px) {
     .assignment {
         width: 100%;
