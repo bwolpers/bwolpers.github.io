@@ -1,0 +1,359 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1 {
+    text-align: center;
+    margin: 0;
+    padding: 25px;
+    font-size: 30px;
+}
+
+header {
+    background-color: black;
+    color: white;
+    padding: 30px 0;
+}
+
+#preview {
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+#Book {
+    width: 75px;
+    height: 75px;
+    position: absolute;
+    top: -10px;
+}
+
+nav {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+nav ul {
+    list-style-type: none;
+    font-size: 20px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+nav li {
+    text-align: center;
+    margin: 0 15px;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+}
+
+.content-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    margin-bottom: 20px;
+}
+
+.box {
+    padding: 10px;
+    align-items: right;
+    text-align: right;
+    float: right;
+    justify-content: right;
+    margin-left: 500px;
+    background-color: rgba(128, 128, 128, 0.9);
+    margin-top: 100px;
+}
+.form-group {
+    display: flex;
+    flex-direction: column;
+    background-color: grey;
+    padding: 10px;
+    align-items: left;
+}
+
+.form-group label {
+    width: 100%; 
+    padding: 5px;
+    font-size: 20px;
+    text-align: left;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%; 
+    padding: 5px;
+}
+#success-message, #error-message {
+    text-align: center;
+    font-weight: bold;
+}
+
+
+.box h2 {
+    text-align: center;
+    margin-top: 20px;
+    margin-left: 0;
+}
+
+.button {
+    display: block;
+    margin: 0 auto;
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 20px;
+    background-color: #e74c3c;
+    color: white;
+    cursor: pointer;
+    border: 2px solid black;
+}
+
+.popular-reviews .review .button {
+    margin: 0 auto;
+    margin-top: 100px;
+    text-decoration: none;
+    width: 100px;
+    height: 20px;
+}
+
+.review p {
+    width: 100%;
+    height: 100px;
+}
+
+.button:hover {
+    background-color: #c0392b;
+}
+
+.box p {
+    font-size: 18px;
+    margin-bottom: 20px;
+    text-align: center;
+    padding: 10px;
+    color: white;
+}
+
+#more {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 5px;
+}
+
+
+
+
+.hamburger-button {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+    margin-right: 20px;
+}
+
+.hamburger-button .bar {
+    width: 30px;
+    height: 3px;
+    background-color: #fff;
+}
+
+#hamburger-input {
+    display: none;
+}
+
+.name {
+    font-size: 29px;
+    font-weight: bold;
+    margin-top: 10px;
+    text-align: center;
+}
+
+#bio {
+    font-size: 20px;
+    margin-top: 5px;
+    margin-left: 20px;
+    margin-right: 20px;
+    text-align: center;
+}
+
+.profile-picture {
+    width: 300px;
+    height: 300px;
+    overflow: hidden;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    margin-left: 20px;
+}
+
+.profile-picture img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.popular-reviews {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    text-align: center;
+    background-color: #dadada;
+}
+
+.popular-reviews h2 {
+    margin-bottom: 20px;
+}
+
+.popular-reviews .review {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    flex-direction: column;
+    margin-bottom: 50px;
+}
+
+.reviews-container {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+}
+
+.review p,
+h3 {
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.review-set {
+    margin-bottom: 20px;
+}
+
+
+@media (max-width: 768px) {
+    body {
+        overflow-x: hidden;
+    }
+
+    #Book {
+        display: none;
+    }
+
+    .popular-reviews {
+        flex-direction: column;
+    }
+
+    .content-container {
+        flex-direction: column;
+        margin-bottom: 20px;
+    }
+
+    .box {
+        margin-right: 0;
+    }
+
+    .box h2 {
+        text-align: center;
+        margin-top: 20px;
+        margin-left: 0;
+    }
+
+    #nav {
+        display: none;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        left: 10%;
+        background-color: black;
+    }
+
+    nav ul {
+        display: block;
+        padding: 0;
+        margin: 0;
+        text-align: center;
+    }
+
+    nav li {
+        margin: 15px 0;
+    }
+
+    #hamburger-input:checked + .hamburger-button + #nav {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .button {
+        margin: 0 auto;
+    }
+
+    .name {
+        margin: 10px auto;
+    }
+
+    #bio {
+        margin: 10px auto;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    .profile-picture {
+        width: 200px;
+        height: 200px;
+       
+        margin-top: 10px;
+    }
+
+    .reviews-container {
+        flex-direction: column; 
+    }
+
+    .review {
+        width: 100%; 
+        max-width: none; 
+        margin: 0 auto;
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+
+    .button {
+        margin-top: 10px;
+    }
+    .form-group {
+        align-items: center;
+    }
+    .box {
+        padding: 10px;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+        margin-left: 100px;
+        background-color: rgba(128, 128, 128, 0.9);
+        margin-top: 100px;
+    }
+}
+
+
+@media (min-width: 768px) {
+    .hamburger-button {
+        display: none;
+    }
+
+    #Book {
+        display: block;
+    }
+}
