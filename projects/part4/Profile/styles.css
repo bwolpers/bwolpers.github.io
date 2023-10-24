@@ -75,14 +75,16 @@ nav a {
 }
 .form-group {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    align-items: center;
     background-color: grey;
-    padding: 10px;
-    align-items: left;
+    padding: 20px;
+    padding-left: 50px;
+    padding-right: 50px;
 }
 
 .form-group label {
-    width: 100%; 
+    flex: 1; 
     padding: 5px;
     font-size: 20px;
     text-align: left;
@@ -90,9 +92,10 @@ nav a {
 
 .form-group input,
 .form-group textarea {
-    width: 100%; 
+    flex: 2; 
     padding: 5px;
 }
+
 #success-message, #error-message {
     text-align: center;
     font-weight: bold;
