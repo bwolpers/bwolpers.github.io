@@ -1,0 +1,206 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #dadada;
+}
+
+h1 {
+    text-align: center;
+    background-color: grey;
+    margin: 0;
+    padding: 25px;
+}
+
+header {
+    background-color: black;
+    color: white;
+    padding: 30px 0;
+}
+
+img {
+    height: 100px;
+    width: 100px;
+}
+
+#Book {
+    width: 75px;
+    height: 75px;
+    float: left;
+    position: absolute;
+    top: -10px;
+}
+
+nav {
+    float: right;
+    top: 0px;
+    right: 0;
+    position: absolute;
+}
+
+nav ul {
+    list-style-type: none;
+    font-size: 20px;
+    display: flex;
+}
+
+nav li {
+    text-align: center;
+    margin: 0 15px;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+}
+
+.content-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 143px;
+}
+
+.book-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.placeholder-column {
+    flex: 0 1 calc(33.33% - 20px); 
+    margin-right: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.placeholder-column:last-child {
+    margin-right: 0;
+}
+
+.placeholder-column img {
+    max-width: 100%;
+    height: auto;
+}
+
+.placeholder-column h2 {
+    margin: 10px 0;
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+.placeholder-column p {
+    font-size: 18px;
+    margin-bottom: 50px;
+    text-align: center;
+    height: 100px;
+    background-color: rgba(128, 128, 128, 0.9);
+    padding: 20px;
+    color: #dadada;
+}
+
+.button {
+    padding: 5px;
+    padding-right: 45px;
+    padding-left: 45px;
+    font-size: 20px;
+    background-color: #e74c3c;
+    color: white;
+    cursor: pointer;
+    margin-top: -3px;
+    margin-bottom: 75px;
+}
+
+.button:hover {
+    background-color: #c0392b;
+}
+
+#more {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -5%);
+}
+
+#challenge {
+    font-size: 30px;
+    text-align: center;
+}
+
+.completed-challenges {
+    border-bottom: 1.5px solid grey;
+}
+
+.suggested-challenges {
+    border-bottom: 1.5px solid grey;
+}
+
+.hamburger-button {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+    margin-right: 20px;
+}
+
+.hamburger-button .bar {
+    width: 30px;
+    height: 3px;
+    background-color: #fff;
+}
+
+#hamburger-input {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .placeholder-column {
+        flex: 0 1 calc(100% - 20px); 
+    }
+    body {
+        overflow-x: hidden;
+    }
+
+    #nav {
+        display: none;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        left: 10%;
+        background-color: black;
+    }
+
+    nav ul {
+        display: block;
+        padding: 0;
+        margin: 0;
+        text-align: center;
+    }
+
+    nav li {
+        margin: 15px 0;
+    }
+
+    #hamburger-input:checked + .hamburger-button + #nav {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #Book {
+        display: none;
+    }
+}
+
+@media (min-width: 768px) {
+    .hamburger-button {
+        display: none;
+    }
+
+    #Book {
+        display: block;
+    }
+    
+}

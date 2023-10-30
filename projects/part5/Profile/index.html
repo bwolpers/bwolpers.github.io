@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script> 
+    <title>Lists</title>
+</head>
+
+<body>
+    <header>
+        <img id="Book" src="../images/book.png" alt="book">
+        <input type="checkbox" id="hamburger-input" class="burger-shower" />
+        <label id="hamburger-menu" for="hamburger-input" class="hamburger-button">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </label>
+        <nav id="nav">
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../BookReviews/index.html">Book Reviews</a></li>
+                <li><a href="../Lists/index.html">Lists</a></li>
+                <li><a href="../Challenges/index.html">Challenges</a></li>
+                <li><a href="../Profile/index.html">Profile</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="content-container">
+            <div class="box2">
+                <div class="profile-picture">
+                    <img id="pfp" src="images/pfp.jpg" alt="pfp">
+                </div>
+                <p class="name">Username</p>
+                <p id="bio">No bio yet</p>
+                <a href="../ProfilePreview/index.html"><button class="button" id="preview">Edit Profile</button></a>
+            </div>
+          
+            <div class="content-container2">
+                <div class="box">
+                    <h2>Contact Us</h2>
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <label for="name">Name:</label>
+                            <input type="text" id="name" name="name" autocomplete="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" name="email" autocomplete="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message:</label>
+                            <textarea id="message" name="message" autocomplete="message" required></textarea>
+                        </div>
+                        <button type="submit" class="button" id="submit-button">Submit</button>
+                    </form>
+                    <div id="success-message" style="display: none;">Message sent successfully!</div>
+                    <div id="error-message" style="display: none;">Error sending the message.</div>
+                </div>
+            </div>
+            <div id="error-log" style="display: none;" class="error-log"></div>
+        </div>
+    <section class="popular-reviews">
+        <h2>Popular Reviews</h2>
+
+        <div class="reviews-container">
+            <div class="review-set">
+                <div class="review">
+                    <h3>"To Kill a Mockingbird" by Harper Lee</h3>
+                    <p>Walter Isaacson's biography of Steve Jobs offers an in-depth look at the life and work of the visionary Apple co-founder. It's a captivating account of innovation, leadership, and technology.</p>
+                    <a href="#" class="button">View</a>
+                </div>
+                <div class="review">
+                    <h3>"1984" by George Orwell</h3>
+                    <p>George Orwell's dystopian masterpiece, "1984," presents a chilling vision of a totalitarian society where the ruling regime, led by Big Brother, monitors every aspect of citizens' lives. The novel serves as a stark warning about the pervasive dangers of government surveillance.</p>
+                    <a href="#" class="button">View</a>
+                </div>
+            </div>
+
+            <div class="review-set">
+                <div class="review">
+                    <h3>"Steve Jobs" by Walter Isaacson</h3>
+                    <p>An in-depth biography of the visionary co-founder of Apple. Walter Isaacson provides a detailed look into the life and innovation of Steve Jobs. An inspiring read for tech enthusiasts and entrepreneurs.</p>
+                    <a href="#" class="button">View</a>
+                </div>
+                <div class="review">
+                    <h3>"Pride and Prejudice" by Jane Austen</h3>
+                    <p>A timeless classic of manners and love. Jane Austen's novel explores social class, marriage, and the complexities of human relationships. The wit and humor make it a delightful read.</p>
+                    <a href="#" class="button">View</a>
+                </div>
+            </div>
+
+            <div class="review-set">
+                <div class="review">
+                    <h3>"The Hobbit" by J.R.R. Tolkien</h3>
+                    <p>J.R.R. Tolkien's "The Hobbit" is an enchanting adventure filled with mythical creatures, dragons, and a reluctant hero. It's a must-read for fans of epic fantasy</p>
+                    <a href="#" class="button">View</a>
+                </div>
+                <div class="review">
+                    <h3>"Dune" by Frank Herbert</h3>
+                    <p>A science fiction epic with intricate world-building. Frank Herbert's "Dune" is a mesmerizing saga of power, politics, and ecological themes. It's a must-read for fans of complex, imaginative storytelling.</p>
+                    <a href="#" class="button">View</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    
+    
+    
+    
+    
+</main>
+    <footer>
+
+    </footer>
+    <script
+  type="text/javascript"
+  src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+</script>
+
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script>
+    (function () {
+        emailjs.init("service_3wxjsii");
+    })();
+</script>
+
+</body>
+
+</html>
