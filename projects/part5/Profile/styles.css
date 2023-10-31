@@ -259,14 +259,19 @@ h3 {
     .popular-reviews {
         flex-direction: column;
     }
-
+    .profile-picture {
+       align-items: center;
+       margin: 0 auto;
+    }
     .content-container {
         flex-direction: column;
         margin-bottom: 20px;
     }
 
     .box {
-        margin-right: 0;
+        align-items: center;
+        margin: 0 auto;
+        justify-content: center;
     }
 
     .box h2 {

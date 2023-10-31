@@ -25,7 +25,9 @@ header {
     position: absolute;
     top: -10px;
 }
-
+.name{
+    font-weight: bold;
+}
 img {
     max-width: 100%;
     height: auto;

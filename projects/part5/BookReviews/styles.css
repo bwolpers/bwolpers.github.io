@@ -65,6 +65,8 @@ nav a {
     border-bottom: 2px solid grey;
 }
 
+
+
 @media (max-width: 768px) {
     .content-container {
         flex-direction: column;
@@ -81,6 +83,7 @@ nav a {
     padding: 20px;
     text-align: left;
     margin-left: 100px;
+    flex-direction: column;
 }
 
 .box form {
@@ -106,15 +109,19 @@ nav a {
 }
 
 .button {
-    padding: 7px;
-    padding-right: 45px;
-    padding-left: 45px;
-    font-size: 20px;
+    padding: 10px 20px; /* Adjust padding */
+    font-size: 18px; /* Adjust font size */
     background-color: red;
     text-align: center;
-    align-items: center;
-    margin-left: 280px;
+    margin: 10px; /* Adjust margin */
 }
+
+.button-container {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+}
+
 
 #desc {
     margin-top: 50px;

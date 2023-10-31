@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     const bookReviewForm = document.getElementById("book-review-form");
     const successMessage = document.getElementById("success-message");
-    const newReviewsContainer = document.getElementById("new-reviews-container");
+    const newReviewsContainer = document.getElementById("reviews-container");
     const ratingElement = document.getElementById("rating");
 
     loadReviews();
@@ -59,29 +59,32 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    function addReviewToPage(review, rating) {
+    function addReviewToPage(review) {
         const newReviewDiv = document.createElement("div");
         newReviewDiv.classList.add("content-container");
-
+    
         const placeholderImageUrl = "https://via.placeholder.com/400";
-
-        console.log("Rating Value:", rating);
-
+    
+        console.log("Rating Value:", review.rating);
+    
         newReviewDiv.innerHTML = `
             <div class="box">
                 <h2>${review.title} by ${review.author}</h2>
-                <p id="rating">${generateStarRating(review.rating)}</p>
+                <p class="review-rating">${generateStarRating(review.rating)}</p>
                 <p class="name">Your Name</p>
-                <p id="desc">${review.review}</p>
-                <a href="../ReviewPreview/index.html"><button class="button" id="preview">View</button></a>
+                <p class="review-description">${review.review}</p>
+                <div class="button-container">
+                    <a href="../ReviewPreview/index.html"><button class="button preview-button">View</button></a>
+                </div>
             </div>
             <div class="box2">
                 <img src="${placeholderImageUrl}" alt="${review.title} Image">
             </div>
         `;
-
-        newReviewsContainer.appendChild(newReviewDiv);
+    
+        newReviewsContainer.appendChild(newReviewDiv); // Append to the end of the container
     }
+    
 
     function generateStarRating(rating) {
         let starRating = "";
@@ -109,3 +112,69 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     
 });
+
+const getReviews = async () => {
+      const response = await fetch("http://127.0.0.1:5500/projects/part5/BookReviews/project.json");
+      if (!response.ok) {
+        throw new Error(`Failed to fetch data: ${response.status} - ${response.statusText}`);
+      }
+      return response.json();
+  };
+  
+  const showReviews = async () => {
+    const reviews = await getReviews();
+    const reviewsContainer = document.getElementById("reviews-container");
+
+    reviews.sections.forEach((review) => {
+        const contentDiv = document.createElement("div");
+        contentDiv.classList.add("content-container");
+
+        const boxDiv = document.createElement("div");
+        boxDiv.classList.add("box");
+
+        const h2 = document.createElement("h2");
+        h2.textContent = review.title;
+
+        const pRating = document.createElement("p");
+        pRating.textContent = review.rating;
+
+        const pAuthor = document.createElement("p");
+        pAuthor.classList.add("name");
+        pAuthor.textContent = review.name;
+
+        const pDesc = document.createElement("p");
+        pDesc.textContent = review.desc;
+
+        const aView = document.createElement("a");
+        aView.href = "../ReviewPreview/index.html";
+        const buttonContainer = document.createElement("div");
+        buttonContainer.classList.add("button-container"); 
+        const buttonView = document.createElement("button");
+        buttonView.classList.add("button");
+        buttonView.textContent = "View";
+
+        const boxDiv2 = document.createElement("div");
+        boxDiv2.classList.add("box2");
+        const image = document.createElement("img");
+        image.src = review.image;
+        image.alt = "Book Cover";
+        image.id = "image";
+
+        boxDiv.appendChild(h2);
+        boxDiv.appendChild(pAuthor);
+        boxDiv.appendChild(pRating);
+        boxDiv.appendChild(pDesc);
+        contentDiv.appendChild(boxDiv);
+        boxDiv.appendChild(buttonContainer); 
+
+        buttonContainer.appendChild(buttonView); 
+
+        boxDiv2.appendChild(image);
+        contentDiv.appendChild(boxDiv2);
+        contentDiv.appendChild(aView);
+
+        reviewsContainer.appendChild(contentDiv);
+    });
+};
+
+showReviews();

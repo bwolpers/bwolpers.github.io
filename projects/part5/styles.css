@@ -57,18 +57,10 @@ nav a {
 }
 .button {
     padding: 7px;
-    padding-right: 45px;
-    padding-left: 45px;
     font-size: 20px;
     background-color: red;
     margin-bottom: 100px;
     z-index: 2;
-}
-
-
-.button {
-    font-size: 18px; 
-    padding: 10px 20px; 
 }
 
 .text {
@@ -76,9 +68,9 @@ nav a {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 50%; 
+    width: 50%;
     background-color: rgba(128, 128, 128, 0.9);
-    padding: 20px; 
+    padding: 20px;
 }
 
 .iframe-container {
