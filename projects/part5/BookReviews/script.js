@@ -82,7 +82,7 @@ document.addEventListener("DOMContentLoaded", function () {
             </div>
         `;
     
-        newReviewsContainer.appendChild(newReviewDiv); // Append to the end of the container
+        newReviewsContainer.appendChild(newReviewDiv);
     }
     
 

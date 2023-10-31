@@ -109,17 +109,17 @@ nav a {
 }
 
 .button {
-    padding: 10px 20px; /* Adjust padding */
-    font-size: 18px; /* Adjust font size */
+    padding: 10px 20px;
+    font-size: 18px;
     background-color: red;
     text-align: center;
-    margin: 10px; /* Adjust margin */
+    margin: 10px; 
 }
 
 .button-container {
     display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
+    justify-content: center; 
+    align-items: center; 
 }
 
 
