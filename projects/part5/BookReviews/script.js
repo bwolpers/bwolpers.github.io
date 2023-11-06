@@ -114,7 +114,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 const getReviews = async () => {
-      const response = await fetch("http://127.0.0.1:5500/projects/part5/BookReviews/project.json");
+      const response = await fetch("https://bwolpers.github.io/projects/part5/BookReviews/project.json");
       if (!response.ok) {
         throw new Error(`Failed to fetch data: ${response.status} - ${response.statusText}`);
       }
