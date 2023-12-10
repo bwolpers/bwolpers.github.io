@@ -1,0 +1,170 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #dadada;
+}
+
+h1 {
+    text-align: center;
+    margin: 0;
+
+}
+
+header {
+    background-color: black;
+    color: white;
+    padding: 30px 0;
+}
+
+#Book {
+    width: 75px;
+    height: 75px;
+    float: left;
+    position: absolute;
+    top: -10px;
+}
+
+nav {
+    float: right;
+    top: 0px;
+    right: 0;
+    position: absolute;
+}
+
+nav ul {
+    list-style-type: none;
+    font-size: 20px;
+    display: flex;
+}
+
+nav li {
+    text-align: center;
+    margin: 0 15px;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+}
+
+.content-container {
+    display: flex;
+    justify-content: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-bottom: 143px;
+}
+
+.box {
+    padding: 20px;
+    text-align: left;
+}
+
+.box h2 {
+    margin-left: 0;
+    text-align: center;
+    font-size: 15px;
+    color: red;
+}
+
+.button {
+    padding: 5px;
+    padding-right: 45px;
+    padding-left: 45px;
+    font-size: 20px;
+    background-color: #e74c3c;
+    color: white;
+    cursor: pointer;
+    margin-top: -3px;
+}
+
+.button:hover {
+    background-color: #c0392b;
+}
+
+.box p {
+    font-size: 18px;
+    margin-bottom: 50px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    color: white;
+    margin-bottom: 70px;
+}
+
+.box h1 {
+    font-size: 20px;
+}
+
+#more {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -5%);
+}
+
+.hamburger-button {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+    margin-right: 20px;
+}
+
+.hamburger-button .bar {
+    width: 30px;
+    height: 3px;
+    background-color: #fff;
+}
+
+#hamburger-input {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    body {
+        overflow-x: hidden;
+    }
+
+    #nav {
+        display: none;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        left: 10%;
+        background-color: black;
+    }
+
+    nav ul {
+        display: block;
+        padding: 0;
+        margin: 0;
+        text-align: center;
+    }
+
+    nav li {
+        margin: 15px 0;
+    }
+
+    #hamburger-input:checked+.hamburger-button+#nav {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #Book {
+        display: none;
+    }
+}
+
+@media (min-width: 768px) {
+    .hamburger-button {
+        display: none;
+    }
+
+    #Book {
+        display: block;
+    }
+}
