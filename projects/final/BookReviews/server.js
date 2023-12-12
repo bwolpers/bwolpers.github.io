@@ -23,16 +23,13 @@ const startMongo = async () => {
 
 module.exports = startMongo;
 
-
-
 const reviewSchema = new mongoose.Schema({
   name: String,
   title: String,
   author: String,
   review: String,
   rating: Number,
-});
-
+}, { collection: 'reviews' });
 const Review = mongoose.model('Review', reviewSchema);
 
 
@@ -51,8 +48,7 @@ app.post('/api/reviews', async (req, res) => {
 
 app.get('/api/reviews', async (req, res) => {
   try {
-    const reviews = await Review.find().maxTimeMS(30000); 
-
+    const reviews = await Review.find();
     res.status(200).json(reviews);
   } catch (error) {
     console.error("Error fetching reviews:", error);
