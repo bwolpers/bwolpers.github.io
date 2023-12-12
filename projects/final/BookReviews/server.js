@@ -11,7 +11,9 @@ app.use(bodyParser.json());
 app.use(express.static('public'));
 
 
-mongoose.connect('mongodb+srv://bwolp14:BDudder64$$@bwolp.6j5hxxy.mongodb.net/');
+mongoose.connect('mongodb+srv://bwolp14:BDudder64$$@bwolp.6j5hxxy.mongodb.net/', {
+  ssl: true,
+});
 
 const db = mongoose.connection;
 
