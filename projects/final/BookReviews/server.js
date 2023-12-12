@@ -12,7 +12,8 @@ app.use(express.static('public'));
 
 
 mongoose.connect('mongodb+srv://bwolp14:BDudder64$$@bwolp.6j5hxxy.mongodb.net/', {
-  ssl: true,
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
 });
 
 const db = mongoose.connection;
