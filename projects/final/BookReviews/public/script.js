@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 },
                 body: JSON.stringify(review),
             });
-
+    
             if (!response.ok) {
                 throw new Error(`Failed to save review: ${response.status} - ${response.statusText}`);
             }
@@ -66,6 +66,7 @@ document.addEventListener("DOMContentLoaded", function () {
             console.error(error);
         }
     }
+    
 
     function loadReviews() {
         const existingReviews = JSON.parse(localStorage.getItem("reviews")) || [];
