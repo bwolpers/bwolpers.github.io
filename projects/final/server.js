@@ -11,7 +11,7 @@ app.use(bodyParser.json());
 app.use(express.static('public'));
 
 
-mongoose.connect('mongodb://127.0.0.1:27017/test', {
+mongoose.connect('mongodb+srv://bwolp14:BDudder64$$@bwolp.6j5hxxy.mongodb.net/', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
