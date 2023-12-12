@@ -4,24 +4,16 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 
 const app = express();
-const PORT = process.env.PORT || 3000;
 
 app.use(cors());
 app.use(bodyParser.json());
 app.use(express.static('public'));
 
-const startMongo = async () => {
-  mongoose
-    .connect(
-      "mongodb+srv://bwolp14:BDudder64$$@bwolp.6j5hxxy.mongodb.net/"
-    )
-    .then(() => {
-      console.log("Connected to mongodb");
-    })
-    .catch((error) => console.log("Couldn't connect to mongodb", error));
-};
-
-module.exports = startMongo;
+    
+mongoose.connect("mongodb+srv://bwolp14:BDudder64$$@bwolp.6j5hxxy.mongodb.net/", {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
 
 const reviewSchema = new mongoose.Schema({
   name: String,
@@ -29,7 +21,8 @@ const reviewSchema = new mongoose.Schema({
   author: String,
   review: String,
   rating: Number,
-}, { collection: 'reviews' });
+}, 
+);
 const Review = mongoose.model('Review', reviewSchema);
 
 
