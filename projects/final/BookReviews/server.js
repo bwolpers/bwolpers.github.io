@@ -10,17 +10,20 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(express.static('public'));
 
+const startMongo = async () => {
+  mongoose
+    .connect(
+      "mongodb+srv://bwolp14:BDudder64$$@bwolp.6j5hxxy.mongodb.net/"
+    )
+    .then(() => {
+      console.log("Connected to mongodb");
+    })
+    .catch((error) => console.log("Couldn't connect to mongodb", error));
+};
 
-mongoose.connect('mongodb+srv://bwolp14:BDudder64$$@bwolp.6j5hxxy.mongodb.net/', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-  tls: true,
-  tlsInsecure: true,
-});
+module.exports = startMongo;
 
-const db = mongoose.connection;
 
-db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
 const reviewSchema = new mongoose.Schema({
   name: String,
