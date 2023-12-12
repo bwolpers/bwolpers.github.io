@@ -5,7 +5,12 @@ const cors = require('cors');
 
 const app = express();
 
-app.use(cors());
+app.use(cors({
+  origin: 'https://chapter-chatter.onrender.com/api/reviews', 
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  credentials: true,
+}));
+
 app.use(bodyParser.json());
 app.use(express.static('public'));
 
