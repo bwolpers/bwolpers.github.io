@@ -11,17 +11,13 @@ app.use(bodyParser.json());
 app.use(express.static('public'));
 
 
-mongoose.connect('mongodb+srv://bwolp14:BDudder64$$@bwolp.6j5hxxy.mongodb.net/', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+mongoose.connect('mongodb+srv://bwolp14:BDudder64$$@bwolp.6j5hxxy.mongodb.net/');
 
 const db = mongoose.connection;
 
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
 const reviewSchema = new mongoose.Schema({
-  id: mongoose.SchemaTypes.ObjectId,
   name: String,
   title: String,
   author: String,
