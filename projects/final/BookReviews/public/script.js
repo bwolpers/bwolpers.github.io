@@ -8,17 +8,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
     bookReviewForm.addEventListener("submit", function (e) {
         e.preventDefault();
+        const name = document.getElementById("name").value;
         const bookTitle = document.getElementById("book-title").value;
         const author = document.getElementById("author").value;
         const review = document.getElementById("review").value;
         const rating = parseInt(document.getElementById("rating-input").value);
 
-
-
-        if (bookTitle === "" || author === "" || review === "" || rating < 1 || rating > 5) {
+        if (bookTitle === "" || author === "" || name == "" || review === "" || rating < 1 || rating > 5) {
             alert("Please fill in all the required fields and provide a valid rating (1-5).");
         } else {
             const newReview = {
+                name: name,
                 title: bookTitle,
                 author: author,
                 review: review,
@@ -27,41 +27,45 @@ document.addEventListener("DOMContentLoaded", function () {
 
             saveReview(newReview);
 
-            addReviewToPage(newReview);
+
 
             const successMessageText = `
                 <h2>Review Submitted Successfully</h2>
+                <p><strong>Username:</strong> ${name}</p>
                 <p><strong>Book Title:</strong> ${bookTitle}</p>
                 <p><strong>Author:</strong> ${author}</p>
                 <p><strong>Rating:</strong> ${generateStarRating(rating)}</p>
                 <p><strong>Review:</strong> ${review}</p>
             `;
+
             successMessage.innerHTML = successMessageText;
             successMessage.style.display = "block";
 
             bookReviewForm.reset();
+
+            setTimeout(() => {
+                successMessage.style.display = "none";
+            }, 5000);
         }
     });
 
     async function saveReview(review) {
         try {
-          const response = await fetch('http://localhost:3000/api/reviews', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(review),
-          });
-      
-          if (!response.ok) {
-            throw new Error(`Failed to save review: ${response.status} - ${response.statusText}`);
-          }
-      
-          // Continue with your client-side logic if the review is saved successfully
+            const response = await fetch('http://localhost:3000/api/reviews', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(review),
+            });
+
+            if (!response.ok) {
+                throw new Error(`Failed to save review: ${response.status} - ${response.statusText}`);
+            }
         } catch (error) {
-          console.error(error);
+            console.error(error);
         }
-      }
+    }
 
     function loadReviews() {
         const existingReviews = JSON.parse(localStorage.getItem("reviews")) || [];
@@ -71,128 +75,168 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    function addReviewToPage(review) {
-        const newReviewDiv = document.createElement("div");
-        newReviewDiv.classList.add("content-container");
-    
-        const placeholderImageUrl = "https://via.placeholder.com/400";
-    
-        console.log("Rating Value:", review.rating);
-    
-        newReviewDiv.innerHTML = `
-            <div class="box">
-                <h2>${review.title} by ${review.author}</h2>
-                <p class="review-rating">${generateStarRating(review.rating)}</p>
-                <p class="name">Your Name</p>
-                <p class="review-description">${review.review}</p>
-                <div class="button-container">
-                    <a href="../ReviewPreview/index.html"><button class="button preview-button">View</button></a>
-                </div>
-            </div>
-            <div class="box2">
-                <img src="${placeholderImageUrl}" alt="${review.title} Image">
-            </div>
-        `;
-    
-        newReviewsContainer.appendChild(newReviewDiv);
-    }
-    
+
+
 
     function generateStarRating(rating) {
         let starRating = "";
         switch (rating) {
             case 1:
-                starRating = "★☆☆☆☆";
+                starRating = "&#9733;&#9734;&#9734;&#9734;&#9734;";
                 break;
             case 2:
-                starRating = "★★☆☆☆";
+                starRating = "&#9733;&#9733;&#9734;&#9734;&#9734;";
                 break;
             case 3:
-                starRating = "★★★☆☆";
+                starRating = "&#9733;&#9733;&#9733;&#9734;&#9734;";
                 break;
             case 4:
-                starRating = "★★★★☆";
+                starRating = "&#9733;&#9733;&#9733;&#9733;&#9734;";
                 break;
             case 5:
-                starRating = "★★★★★";
+                starRating = "&#9733;&#9733;&#9733;&#9733;&#9733;";
                 break;
             default:
-                starRating = "★★★★★";
+                starRating = "&#9733;&#9733;&#9733;&#9733;&#9733;";
                 break;
         }
         return starRating;
     }
-    
+
+
+
 });
+function generateStarRating(rating) {
+    let starRating = "";
+    switch (rating) {
+        case 1:
+            starRating = "&#9733;&#9734;&#9734;&#9734;&#9734;";
+            break;
+        case 2:
+            starRating = "&#9733;&#9733;&#9734;&#9734;&#9734;";
+            break;
+        case 3:
+            starRating = "&#9733;&#9733;&#9733;&#9734;&#9734;";
+            break;
+        case 4:
+            starRating = "&#9733;&#9733;&#9733;&#9733;&#9734;";
+            break;
+        case 5:
+            starRating = "&#9733;&#9733;&#9733;&#9733;&#9733;";
+            break;
+        default:
+            starRating = "&#9733;&#9733;&#9733;&#9733;&#9733;";
+            break;
+    }
+    return starRating;
+}
+
 
 const getReviews = async () => {
     const response = await fetch('http://localhost:3000/api/reviews');
     if (!response.ok) {
-      throw new Error(`Failed to fetch data: ${response.status} - ${response.statusText}`);
+        throw new Error(`Failed to fetch data: ${response.status} - ${response.statusText}`);
     }
     return response.json();
-  };
+};
+async function deleteReview(reviewId) {
+    try {
+        const response = await fetch(`http://localhost:3000/api/reviews/${reviewId}`, {
+            method: 'DELETE',
 
-    const showReviews = async () => {
-        try {
-            const reviewsData = await fetch('public/project.json');
-            const reviewsContainer = document.getElementById('reviews-container');
-            const data = await reviewsData.json(); 
-    
-        data.sections.forEach((review) => {
-        const contentDiv = document.createElement('div');
-        contentDiv.classList.add('content-container');
-  
-        const boxDiv = document.createElement('div');
-        boxDiv.classList.add('box');
-  
-        const h2 = document.createElement('h2');
-        h2.textContent = review.title;
-  
-        const pRating = document.createElement('p');
-        pRating.innerHTML = `Rating: ${review.rating}`;
-  
-        const pAuthor = document.createElement('p');
-        pAuthor.classList.add('name');
-        pAuthor.textContent = `By ${review.name}`;
-  
-        const pDesc = document.createElement('p');
-        pDesc.textContent = review.desc;
-  
-        const aView = document.createElement('a');
-        aView.href = '../ReviewPreview/index.html';
-        const buttonContainer = document.createElement('div');
-        buttonContainer.classList.add('button-container');
-        const buttonView = document.createElement('button');
-        buttonView.classList.add('button');
-        buttonView.textContent = 'View';
-  
-        const boxDiv2 = document.createElement('div');
-        boxDiv2.classList.add('box2');
-        const image = document.createElement('img');
-        image.src = review.image;
-        image.alt = 'Book Cover';
-        image.id = 'image';
-  
-        boxDiv.appendChild(h2);
-        boxDiv.appendChild(pAuthor);
-        boxDiv.appendChild(pRating);
-        boxDiv.appendChild(pDesc);
-        contentDiv.appendChild(boxDiv);
-        boxDiv.appendChild(buttonContainer);
-  
-        buttonContainer.appendChild(buttonView);
-  
-        boxDiv2.appendChild(image);
-        contentDiv.appendChild(boxDiv2);
-        contentDiv.appendChild(aView);
-  
-        reviewsContainer.appendChild(contentDiv);
-      });
+        });
+
+        if (!response.ok) {
+            throw new Error(`Failed to delete review: ${response.status} - ${response.statusText}`);
+        }
+
+
+        const reviewElement = document.querySelector(`[data-review-id="${reviewId}"]`);
+        if (reviewElement) {
+            reviewElement.parentElement.remove();
+
+        }
     } catch (error) {
-      console.error(error);
+        console.error(error);
     }
-  };
-  
+}
+
+
+
+
+
+async function confirmDeleteReview(reviewId) {
+    const isConfirmed = confirm("Are you sure you want to delete this review?");
+
+    if (isConfirmed) {
+        await deleteReview(reviewId);
+    }
+}
+const showReviews = async () => {
+    try {
+        const reviewsData = await getReviews();
+        const reviewsContainer = document.getElementById('reviews-container');
+        const reviews = reviewsData || [];
+
+        reviews.forEach((review) => {
+            const contentDiv = document.createElement('div');
+            contentDiv.classList.add('content-container');
+
+            const boxDiv = document.createElement('div');
+            boxDiv.classList.add('box');
+
+            const pName = document.createElement('p');
+            pName.classList.add('name');
+            pName.textContent = review.name;
+            pName.style.marginBottom = '5px';
+
+            const h2 = document.createElement('h2');
+            h2.textContent = review.title + ' by ' + review.author;
+            h2.style.marginTop = '40px';
+
+            const pRating = document.createElement('p');
+            pRating.innerHTML = `Rating: ${generateStarRating(review.rating)}`;
+
+            const pDesc = document.createElement('p');
+            pDesc.textContent = review.review;
+
+            const deleteLink = document.createElement('a');
+            deleteLink.innerHTML = '&#x2715;';
+            deleteLink.id = 'delete-link';
+            deleteLink.addEventListener('click', () => confirmDeleteReview(review._id));
+
+            const aView = document.createElement('a');
+            aView.href = '../ReviewPreview/index.html';
+            const buttonContainer = document.createElement('div');
+            buttonContainer.classList.add('button-container');
+            const buttonView = document.createElement('button');
+            buttonView.classList.add('button');
+            buttonView.textContent = 'View';
+            buttonView.addEventListener('click', () => {
+
+                window.location.href = '../ReviewPreview/index.html';
+            });
+
+            const boxDiv2 = document.createElement('div');
+            boxDiv2.classList.add('box2');
+
+            boxDiv.appendChild(pName);
+            boxDiv.appendChild(h2);
+            boxDiv.appendChild(pRating);
+            boxDiv.appendChild(pDesc);
+            buttonContainer.appendChild(deleteLink);
+            contentDiv.appendChild(boxDiv);
+            boxDiv.appendChild(buttonContainer);
+
+            buttonContainer.appendChild(buttonView);
+
+            reviewsContainer.appendChild(contentDiv);
+        });
+    } catch (error) {
+        console.error(error);
+    }
+};
+
+
 
 showReviews();

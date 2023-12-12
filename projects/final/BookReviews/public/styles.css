@@ -93,11 +93,11 @@ nav a {
 .name {
     font-size: 20px;
     font-weight: bold;
-    margin-bottom: 0;
+    margin-bottom: 5px;
 }
 
 .box h2 {
-    margin-top: 100px;
+    margin-top: 40px;
     align-items: left;
     text-align: center;
 }
@@ -113,13 +113,13 @@ nav a {
     font-size: 18px;
     background-color: red;
     text-align: center;
-    margin: 10px; 
+    margin: 10px;
 }
 
 .button-container {
     display: flex;
-    justify-content: center; 
-    align-items: center; 
+    justify-content: center;
+    align-items: center;
 }
 
 
@@ -219,16 +219,20 @@ nav a {
     body {
         overflow-x: hidden;
     }
+
     .box {
         margin-left: 0;
     }
+
     .box2 {
         margin: 20px auto;
     }
+
     #desc {
         width: 300px;
         padding-bottom: 200px;
     }
+
     #nav {
         display: none;
         flex-direction: column;
@@ -249,7 +253,7 @@ nav a {
         margin: 15px 0;
     }
 
-    #hamburger-input:checked + .hamburger-button + #nav {
+    #hamburger-input:checked+.hamburger-button+#nav {
         display: flex;
         flex-direction: column;
     }
@@ -263,6 +267,7 @@ nav a {
     body {
         overflow-x: hidden;
     }
+
     #nav {
         display: none;
         flex-direction: column;
