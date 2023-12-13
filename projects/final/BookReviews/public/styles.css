@@ -63,14 +63,14 @@ nav a {
 .content-container {
     display: flex;
     border-bottom: 2px solid grey;
+    padding: 200px;
 }
-
-
 
 @media (max-width: 768px) {
     .content-container {
         flex-direction: column;
-    }
+        padding: 100px;
+}
 }
 
 #rating {

@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     async function saveReview(review) {
         try {
-            const response = await fetch('https://chapter-chatter.onrender.com/api/reviews', {
+            const response = await fetch('http://localhost:3000/api/reviews', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -135,20 +135,20 @@ function generateStarRating(rating) {
 
 const getReviews = async () => {
     try {
-        const response = await fetch('https://chapter-chatter.onrender.com/api/reviews');
+        const response = await fetch('http://localhost:3000/api/reviews');
         if (!response.ok) {
             throw new Error(`Failed to fetch data: ${response.status} - ${response.statusText}`);
         }
         return response.json();
     } catch (error) {
         console.error('Error in getReviews:', error);
-        throw error; // rethrow the error to be caught by the calling function
+        throw error; 
     }
 };
 
 async function deleteReview(reviewId) {
     try {
-        const response = await fetch(`https://chapter-chatter.onrender.com/api/reviews/${reviewId}`, {
+        const response = await fetch(`http://localhost:3000/api/reviews/${reviewId}`, {
             method: 'DELETE',
 
         });
