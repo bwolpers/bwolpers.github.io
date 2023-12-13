@@ -80,14 +80,14 @@ nav a {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    margin: 0 -10px; /* Adjust margin for smaller screens */
+    margin: 0 -10px; 
 }
 
 .placeholder-column {
-    flex: 0 1 calc(33.33% - 20px); /* Adjust column width for larger screens */
-    margin: 0 10px 40px; /* Adjust margin for larger screens and add space below */
+    flex: 0 1 calc(33.33% - 20px); 
+    margin: 0 10px 40px; 
     align-items: center;
-    text-align: center; /* Center text */
+    text-align: center; 
 }
 
 .placeholder-column img {
